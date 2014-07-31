@@ -32,3 +32,22 @@ sequential column = correctRange && correctCount
     s = S.fromList column
     correctRange = 1 + (S.findMax s) - (S.findMin s) == length column
     correctCount = S.size s == length column
+
+
+-- Columns might be identifier columns if they are sequential and sorted.
+--
+-- Columns might be freeform text columns if most of them are empty but
+-- some are really long.
+--
+-- Columns might be geospatial if they match certain geospatial formats.
+--
+-- Do I need to find ratio data? What would that mean for a join?
+--
+-- Columns might be interval if they have decimal points/commas, if the
+-- values are not uniformly distributed, if they have negative values,
+-- if they are dates, ...
+--
+-- Columns might be ordinal if they are sequential and not sorted.
+-- Or more generally, if they are near-uniformly distributed integer values.
+--
+-- Columns might be nominal if none of the above things match.
