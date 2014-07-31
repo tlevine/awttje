@@ -1,4 +1,5 @@
 import qualified Data.Map as M
+import           Control.Arrow  (&&&)
 
 data Level = Nominal | Ordinal | Interval | Ratio
 type Column = [String]
@@ -22,4 +23,4 @@ signedSorted Decreasing x:y:[] = x => y
 signedSorted sign x:y:zs = signedSorted sign [x,y] && signedSorted sign y:zs
 
 sorted :: Column -> Bool
-sorted = signedSorted Increasing
+sorted = ((signedSorted Increasing) &&& (signedSorted Decreasing)) 3
