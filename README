@@ -1,3 +1,8 @@
 Determine whether a column contains
 nominal, ordinal, interval, or ratio data.
 
+Maybe some other things too, that don't
+fit into the above categorization.
+
+* Freeform text fields
+* Multiple dimensions in one column (mainly geospatial)
